@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Rows: #{query.rows} and Cols: #{query.cols}
+  table#outer
+    tbody 
+      - for (let i = 0; i< query.rows; i++)
+        tr
+          - for(let j=0; j< query.cols; j++)
+            td #{j+i}
+
+              
+        
+        
+  

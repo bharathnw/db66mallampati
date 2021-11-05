@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  - const cars = [{name:'BMW'},{name:'Audi'},{name:'Range Rover'}, {name: 'Wolks Wagon'},{name:'Ferrari'},{name:'Porshe'}];
+  
+  div(class="row")
+    div(class="container-fluid")
+        div(class="row")
+            each value, index in cars 
+                div(class="col-sm-2" onclick=`buy(${index})`) #{value.name}
+
+  script.
+    function buy(index){
+        alert('You purchased item '+index);
+    }             
+

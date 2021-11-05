@@ -1,4 +1,4 @@
-[Click](https://fwb66mallampati.herokuapp.com/) here to access the main page.
+[Click](https://db66mallampati.herokuapp.com/) here to access the main page.
 
 - Gerogia
     1. getDistance(string)

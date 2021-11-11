@@ -10,6 +10,7 @@ var addModsRouter = require('./routes/addmods');
 var usersRouter = require('./routes/users');
 var selectorRouter = require('./routes/selector');
 var resourceRouter = require('./routes/resource');
+var carRouter = require('./routes/car');
 var Car = require("./models/car");
 var app = express();
 
@@ -86,6 +87,7 @@ app.use('/georgia', georgiaRouter);
 app.use('/addmods', addModsRouter);
 app.use('/selector', selectorRouter);
 app.use('/resource', resourceRouter);
+app.use('/car', carRouter);
 
 
 

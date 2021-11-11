@@ -55,12 +55,12 @@ async function recreateDB() {
     in2.save(function(err, doc) {
         if (err)
             return console.error(err);
-        console.log("First object saved")
+        console.log("Second object saved")
     });
     in3.save(function(err, doc) {
         if (err)
             return console.error(err);
-        console.log("First object saved")
+        console.log("Third object saved")
     });
 }
 

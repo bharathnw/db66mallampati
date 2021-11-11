@@ -13,19 +13,19 @@ router.get('/', api_controller.api);
 /// car ROUTES /// 
 
 // POST request for creating a car.  
-router.post('/resource/cars', car_controller.car_create_post);
+router.post('/cars', car_controller.car_create_post);
 
 // DELETE request to delete car. 
-router.delete('/resource/cars/:id', car_controller.car_delete);
+router.delete('/cars/:id', car_controller.car_delete);
 
 // PUT request to update car. 
-router.put('/resource/cars/:id',
+router.put('/cars/:id',
     car_controller.car_update_put);
 
 // GET request for one car. 
-router.get('/resource/cars/:id', car_controller.car_detail);
+router.get('/cars/:id', car_controller.car_detail);
 
 // GET request for list of all car items. 
-router.get('/resource/cars', car_controller.car_list);
+router.get('/cars', car_controller.cars_list);
 
 module.exports = router;

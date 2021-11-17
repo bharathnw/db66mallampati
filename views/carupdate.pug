@@ -1,0 +1,41 @@
+extends layout 
+
+block content 
+    h1= title 
+    - let carDetails = toShow
+
+    if (toShow == null) 
+        h2 No instance to update 
+    else 
+        form(id='carForm', action=`/resource/cars/${carDetails._id}`, method="PUT") 
+            div(class="form-group row m-r-12") 
+                label(for='name' class="col-sm-3 col-form-label") Car Name:
+                div(class="col-sm-9")
+                    input#name(type='text' class="form-control" name='name' value=carDetails.name) 
+            div(class="form-group row m-r-12") 
+                label(for='color' class="col-sm-3 col-form-label") Car Color:
+                div(class="col-sm-9")
+                    input#color(type='text' class="form-control" name='color' value=carDetails.color) 
+            div(class="form-group row m-r-12") 
+                label(for='cost' class="col-sm-3 col-form-label") Car Cost:
+                div(class="col-sm-9")
+                    input#cost(type='number' class="form-control" name='cost' value=carDetails.cost) 
+            button(type="submit" class="btn btn-success pull-right m-r-12") Submit
+
+    script. 
+        document.forms['carForm'].addEventListener('submit', (event) => { 
+            event.preventDefault(); 
+            // TODO do something here to show user that form is being submitted 
+            fetch(event.target.action, { 
+                method: 'PUT', 
+                body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+            }).then((resp) => { 
+                return resp.json(); // or resp.text() or whatever the server sends 
+            }).then((body) => { 
+                alert("Save succeded") 
+                // TODO handle body 
+            }).catch((error) => { 
+                // TODO handle error 
+                alert("Save failed " + error ) 
+            }); 
+        }); 

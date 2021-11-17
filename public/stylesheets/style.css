@@ -11,3 +11,11 @@ a {
     background-color: aquamarine;
     width: 120px;
 }
+
+.m-r-12 {
+    margin-top: 12px !important;
+}
+
+.pull-right {
+    float: right !important;
+}

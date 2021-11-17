@@ -25,6 +25,8 @@ router.put('/cars/:id',
 // GET request for one car. 
 router.get('/cars/:id', car_controller.car_detail);
 
+
+
 // GET request for list of all car items. 
 router.get('/cars', car_controller.cars_list);
 

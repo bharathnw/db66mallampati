@@ -5,4 +5,12 @@ var router = express.Router();
 /* GET cars */
 router.get('/', car_controlers.car_view_all_Page);
 
+//For details of car
+router.get('/detail', car_controlers.car_view_one_Page);
+
+
+//For Crete
+router.get('/create', car_controlers.car_create_Page);
+
+
 module.exports = router;

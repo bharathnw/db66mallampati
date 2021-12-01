@@ -5,6 +5,8 @@ block content
   - let cars = results;
   
   div(class="row")
+    div(class="col-sm-12")
+      button.btn(class="btn-success col-sm-2", style="float:right", onclick="dispatch('/car/create')") Create New
     div(class="container-fluid")
         div(class="row m-1")
             each value, index in cars 
@@ -14,7 +16,9 @@ block content
                         div(class="col-sm-2" onclick=`buy(${index})`) Car Name: #{value.name}
                         div(class="col-sm-2" onclick=`buy(${index})`) Car Color: #{value.color}
                         div(class="col-sm-2" onclick=`buy(${index})`) Car Cost: #{value.cost}
-                        button.btn( class="btn-primary col-sm-2", onclick= destination) Update 
+                        button.btn( class="btn-primary col-sm-2", onclick= `dispatch(\"/car/detail?id=${value._id}\")`) View&nbsp;&nbsp;&nbsp;
+                        button.btn( class="btn-success col-sm-2", onclick= destination) Update&nbsp;&nbsp;&nbsp;
+                        button.btn( class="btn-danger col-sm-2", onclick= `dispatch(\"/car/delete?id=${value._id}\")`) Delete 
 
   script.
     function buy(index){
